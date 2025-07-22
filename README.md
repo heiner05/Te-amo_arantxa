@@ -8,10 +8,13 @@
       margin: 0;
       overflow: hidden;
       background: black;
-      color: #ff69b4;
     }
     canvas {
       display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 0;
     }
     h1 {
       position: absolute;
@@ -20,14 +23,15 @@
       transform: translate(-50%, -50%);
       color: #ff69b4;
       font-family: monospace;
-      font-size: 2em;
+      font-size: 2.5em;
       text-align: center;
+      z-index: 1;
     }
   </style>
 </head>
 <body>
-  <h1>Te Amo Arantxa</h1>
   <canvas id="canvas"></canvas>
+  <h1>Te Amo Arantxa 💖</h1>
   <script>
     const canvas = document.getElementById('canvas');
     const ctx = canvas.getContext('2d');
@@ -63,4 +67,6 @@
     }
 
     animate();
-  </
+  </script>
+</body>
+</html>
