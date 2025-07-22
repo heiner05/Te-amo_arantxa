@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Te Amo Arantxa</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: black;
+      color: #ff69b4;
+    }
+    canvas {
+      display: block;
+    }
+    h1 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #ff69b4;
+      font-family: monospace;
+      font-size: 2em;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="matrix"></canvas>
+  <h1>TE AMO ARANTXA 💖✨</h1>
+  <script>
+    const canvas = document.getElementById('matrix');
+    const ctx = canvas.getContext('2d');
+
+    canvas.height = window.innerHeight;
+    canvas.width = window.innerWidth;
+
+    const letters = Array(256).join("0").split("");
+    const fontSize = 16;
+
+    function draw() {
+      ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = "#ff69b4";
+      ctx.font = fontSize + "px monospace";
+
+      letters.forEach((y_pos, index) => {
+        const text = "TE AMO";
+        const x_pos = index * fontSize;
+        ctx.fillText(text, x_pos, y_pos);
+        letters[index] = y_pos > 758 + Math.random() * 10000 ? 0 : y_pos + fontSize;
+      });
+    }
+
+    setInterval(draw, 50);
+    window.addEventListener('resize', () => {
+      canvas.height = window.innerHeight;
+      canvas.width = window.innerWidth;
+    });
+  </script>
+</body>
+  </html>
