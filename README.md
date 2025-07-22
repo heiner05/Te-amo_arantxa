@@ -31,6 +31,7 @@
 </head>
 <body>
   <canvas id="canvas"></canvas>
+ 
   <h1>Te Amo Arantxa 💖</h1>
   <script>
     const canvas = document.getElementById('canvas');
